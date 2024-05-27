@@ -1,0 +1,55 @@
+<!-- Modal LOG IN-->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                
+                <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Login form goes here -->
+                <form action="index-resources/function/login-process" method="post">
+                    <div class="form-group">
+                        <label for="username">Username or email</label>
+                        <input type="text" class="form-control" id="user" name="loginusername" placeholder="Enter your username or email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="details">Password</label>
+                        <div style="display: grid; grid-template-columns: 1fr auto;">
+                            <input type="password" id="LoginpasswordField" name="pass" placeholder="Enter your password" class="form-control" required>
+                            <button class="showPass" style="border: none;" type="button" onclick="togglePasswordVisibility('LoginpasswordField', 'LoginpasswordToggleIcon')">
+                                <span class="far fa-eye" id="LoginpasswordToggleIcon"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='register'">Register</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // view and hide password
+function togglePasswordVisibility(fieldId, iconId) {
+  var passwordField = document.getElementById(fieldId);
+  var passwordToggleIcon = document.getElementById(iconId);
+
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
+    passwordToggleIcon.classList.remove("fa-eye");
+    passwordToggleIcon.classList.add("fa-eye-slash");
+  } else {
+    passwordField.type = "password";
+    passwordToggleIcon.classList.remove("fa-eye-slash");
+    passwordToggleIcon.classList.add("fa-eye");
+  }
+}
+
+</script>

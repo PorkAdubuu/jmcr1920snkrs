@@ -1,0 +1,82 @@
+<!-- Modal SIGN UP-->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+            </div>
+            <div class="modal-body">
+                <!-- Form -->
+                <form action="user/function/verifying.php" method="post" id="signupForm" onsubmit="showLoading()">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="signupusername"
+                            placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label class="details">Password</label>
+                        <div style="display: grid; grid-template-columns: 1fr auto;">
+                            <input type="password" id="passwordField" name="userpass" placeholder="Enter your password"
+                                class="form-control" required>
+                            <button class="showPass" type="button"
+                                onclick="togglePasswordVisibility('passwordField', 'passwordToggleIcon')">
+                                <span class="far fa-eye" id="passwordToggleIcon"></span>
+                            </button>
+                        </div>
+                        <div id="passwordError" style="color: red; font-style: italic; font-size: 12px;"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="details">Confirm Password</label>
+                        <div style="display: grid; grid-template-columns: 1fr auto;">
+                            <input type="password" id="confirmPasswordField" name="confirm_userpass"
+                                placeholder="Re-type your password" class="form-control" required>
+                            <button class="showPass" type="button"
+                                onclick="togglePasswordVisibility('confirmPasswordField', 'confirmPasswordToggleIcon')">
+                                <span class="far fa-eye" id="confirmPasswordToggleIcon"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <label for="keypass">KeyPass</label>
+                        <input type="text" class="form-control" id="keypass" name="keypass"
+                            placeholder="Enter your assigned KeyPass" required>
+                    </div> -->
+
+                    <button type="submit" class="btn btn-primary" style="position: relative;">
+                        Sign Up
+                        
+                    </button>
+                    
+                </form>
+                <center>
+                <div id="loading" style="display: none; width: 20%;">
+                    <img src="index-resources/assets/images/gif/loading-anim.gif" alt="Loading..." />
+                </div>
+            </center>
+               
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function showLoading() {
+        var loading = document.getElementById('loading');
+
+        // Show the loading animation
+        loading.style.display = 'block';
+
+        setTimeout(function() {       
+            loading.style.display = 'none';
+        }, 3000); 
+    }
+</script>

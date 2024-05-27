@@ -1,0 +1,45 @@
+.editable-input {
+  border: none;
+  outline: none;
+  font-size: inherit;
+  font-family: inherit;
+  background-color: transparent;
+  font-size: 19px;
+  font-weight: bold;
+  color: white;
+}
+
+#title-quiz,
+#category-quiz,
+#description-quiz,
+#question,
+#correctChoice,
+#choices {
+  color: wheat;
+}
+
+#notification {
+  display: none;
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+
+}
+
+#notification.show {
+  display: block;
+  opacity: 1;
+
+}
+
+#notification.hide {
+  opacity: 0;
+
+}
